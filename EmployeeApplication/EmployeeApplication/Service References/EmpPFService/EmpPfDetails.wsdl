@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EmpPfDetails" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:46310/EmpPfDetails.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:46310/EmpPfDetails.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IEmpPfDetails_IsPfEligible_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsPfEligible" />
+  </wsdl:message>
+  <wsdl:message name="IEmpPfDetails_IsPfEligible_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsPfEligibleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmpPfDetails_GetPfEmployerControlSofar_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPfEmployerControlSofar" />
+  </wsdl:message>
+  <wsdl:message name="IEmpPfDetails_GetPfEmployerControlSofar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPfEmployerControlSofarResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEmpPfDetails_GetPfEmployeeControlSofar_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPfEmployeeControlSofar" />
+  </wsdl:message>
+  <wsdl:message name="IEmpPfDetails_GetPfEmployeeControlSofar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPfEmployeeControlSofarResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IEmpPfDetails">
+    <wsdl:operation name="IsPfEligible">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpPfDetails/IsPfEligible" message="tns:IEmpPfDetails_IsPfEligible_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpPfDetails/IsPfEligibleResponse" message="tns:IEmpPfDetails_IsPfEligible_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPfEmployerControlSofar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpPfDetails/GetPfEmployerControlSofar" message="tns:IEmpPfDetails_GetPfEmployerControlSofar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpPfDetails/GetPfEmployerControlSofarResponse" message="tns:IEmpPfDetails_GetPfEmployerControlSofar_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPfEmployeeControlSofar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEmpPfDetails/GetPfEmployeeControlSofar" message="tns:IEmpPfDetails_GetPfEmployeeControlSofar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEmpPfDetails/GetPfEmployeeControlSofarResponse" message="tns:IEmpPfDetails_GetPfEmployeeControlSofar_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IEmpPfDetails" type="tns:IEmpPfDetails">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="IsPfEligible">
+      <soap:operation soapAction="http://tempuri.org/IEmpPfDetails/IsPfEligible" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPfEmployerControlSofar">
+      <soap:operation soapAction="http://tempuri.org/IEmpPfDetails/GetPfEmployerControlSofar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPfEmployeeControlSofar">
+      <soap:operation soapAction="http://tempuri.org/IEmpPfDetails/GetPfEmployeeControlSofar" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EmpPfDetails">
+    <wsdl:port name="BasicHttpBinding_IEmpPfDetails" binding="tns:BasicHttpBinding_IEmpPfDetails">
+      <soap:address location="http://localhost:46310/EmpPfDetails.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
