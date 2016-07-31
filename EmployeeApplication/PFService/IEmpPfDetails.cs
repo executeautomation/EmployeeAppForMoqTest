@@ -1,13 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Web;
-using System.Text;
+﻿using System.ServiceModel;
 
 namespace PFService
 {
+    /// <summary>
+    /// Author : Karthik KK
+    /// Company : ExecuteAutomation.com
+    /// </summary>
     [ServiceContract]
     public interface IEmpPfDetails
     {
